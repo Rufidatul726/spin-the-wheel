@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+**Spin the Wheel Game**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**1. Introduction**
+The "Spin the Wheel" game is a simple yet engaging game built using React.js. The game consists of a spinning wheel divided into 10 slices, each with a unique score. The objective is to spin the wheel five times and track the total score. After five spins, the player can reset the game and start over.
 
-## Available Scripts
+**2. Component Breakdown**
+The game is structured into two main components:
+- **Wheel Component**: Handles the spinning mechanism, slice highlighting, and score calculation.
+- **History Component**: Keeps track of the last five spins and displays the total score.
 
-In the project directory, you can run:
+**3. Implementation Details**
+- The wheel consists of **10 equal slices**, each representing a different score (e.g., 10, 20, 30…100).
+- At first, the idea was to segment slices and use an **8-second timeout** to determine the result. However, this approach led to the same result appearing repeatedly.
+- To solve this, a **random spin degree** strategy was implemented:
+  - A random number between **0 to 359** is generated.
+  - The number determines which slice the wheel lands on.
+  - The wheel visually rotates for **8 seconds** before stopping at the winning slice.
+- **Highlighting the Winning Slice**:
+  - The index of the current score is tracked.
+  - When a slice matches the current score index, its color is changed.
+- **Disabling Buttons During Spin**:
+  - While the wheel is spinning, all buttons are disabled to prevent multiple spins at once.
+- **Tracking and Resetting Spins**:
+  - A **scores variable** tracks the last five spins.
+  - Once five spins are completed, the game can be reset to start over.
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**4. Conclusion**
+The "Spin the Wheel" game is fully functional, providing a smooth and fair spinning mechanism. The use of React.js ensures modularity, and the implementation of random spin logic guarantees unpredictability. The game successfully tracks spin history and total score while maintaining an interactive and visually engaging experience. Future improvements may include animations, sound effects, and customizable themes for enhanced user engagement.
