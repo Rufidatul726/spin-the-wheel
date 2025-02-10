@@ -136,3 +136,8 @@
 .reset-button:hover:not(:disabled) {
   background-color: #d32f2f;
 }
+
+.reset-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
